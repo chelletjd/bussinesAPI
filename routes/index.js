@@ -31,7 +31,7 @@ router.get('/projects/:id', async function(req,res) {
     }
 });
 
-//ATTACH files top project
+//ATTACH files to project
 router.patch('/projects/files/:id', upload.single('file'), async function(req,res) {
     try {
         const response = await attachFilesToProject(req.params.id, req.file);
@@ -55,7 +55,7 @@ router.post('/projects', async function(req,res) {
 router.patch('/projects/:id', async function(req,res) {
     try {
         const response = await updateProjectById(req.params.id, req.body);
-        res.status(200).json(response)
+        res.status(200).json(`Project with ID ${req.params.id} updated`)
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -65,7 +65,7 @@ router.patch('/projects/:id', async function(req,res) {
 router.delete('/projects/:id', async function(req,res) {
     try {
         const response = await deleteProjectById(req.params.id);
-        res.status(200).json(response)
+        res.status(200).json(`Project with ID ${req.params.id} deleted`)
     } catch (error) {
         res.status(400).json({error: error.message})
     }
