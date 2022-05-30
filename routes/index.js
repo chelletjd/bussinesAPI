@@ -12,6 +12,11 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
 //GET all projects
+router.get('/', async function(req,res) {
+    res.status(200).send("Welcome to Business Project Api")
+});
+
+//GET all projects
 router.get('/projects', async function(req,res) {
     try {
         const response = await getAllProjects();
@@ -55,7 +60,7 @@ router.post('/projects', async function(req,res) {
 router.patch('/projects/:id', async function(req,res) {
     try {
         const response = await updateProjectById(req.params.id, req.body);
-        res.status(200).json(`Project with ID ${req.params.id} updated`)
+        res.status(200).send(`Project with ID ${req.params.id} updated`)
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -65,7 +70,7 @@ router.patch('/projects/:id', async function(req,res) {
 router.delete('/projects/:id', async function(req,res) {
     try {
         const response = await deleteProjectById(req.params.id);
-        res.status(200).json(`Project with ID ${req.params.id} deleted`)
+        res.status(200).send(`Project with ID ${req.params.id} deleted`)
     } catch (error) {
         res.status(400).json({error: error.message})
     }
