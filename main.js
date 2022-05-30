@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use("/",router);
 app.use('/api-docs', swagger.serve, swagger.setup(swaggerDocument));
 
-app.listen(3000,()=>{
-    console.log('Server Listening PORT 3000');
+const port = process.env.PORT || 3000;
+
+app.listen(port,()=>{
+    console.log(`Server Listening PORT ${port}`);
 })
