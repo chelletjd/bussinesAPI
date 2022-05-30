@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "fd9c9653-c35f-4b77-98f1-3bb6dced6cdd",
+		"name": "Projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16028669"
+	},
+	"item": [
+		{
+			"name": "Create project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"name\": \"Project 1\",\n    \"description\": \"this is project 1\",\n    \"season\": \"seasin1\",\n    \"owner\": \"Michelle Torres\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get project by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects/1",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Attach files to a project",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/michelletorres/Downloads/gettyimages-1196680867-612x612.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects/files/1",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects",
+						"files",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update project by Id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"season\": \"season 1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects/1",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete project by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-54-209-237-241.compute-1.amazonaws.com/projects/2",
+					"protocol": "http",
+					"host": [
+						"ec2-54-209-237-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"projects",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
